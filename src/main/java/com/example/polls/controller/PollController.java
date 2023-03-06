@@ -2,9 +2,9 @@ package com.example.polls.controller;
 
 import com.example.polls.model.*;
 import com.example.polls.payload.*;
-import com.example.polls.repository.PollRepository;
-import com.example.polls.repository.UserRepository;
-import com.example.polls.repository.VoteRepository;
+import com.example.polls.repository.PollRepoService;
+import com.example.polls.repository.UserRepoService;
+import com.example.polls.repository.VoteRepoService;
 import com.example.polls.security.CurrentUser;
 import com.example.polls.security.UserPrincipal;
 import com.example.polls.service.PollService;
@@ -24,13 +24,13 @@ import java.net.URI;
 public class PollController {
 
     @Autowired
-    private PollRepository pollRepository;
+    private PollRepoService pollRepository;
 
     @Autowired
-    private VoteRepository voteRepository;
+    private VoteRepoService voteRepoService;
 
     @Autowired
-    private UserRepository userRepository;
+    private UserRepoService userRepoService;
 
     @Autowired
     private PollService pollService;

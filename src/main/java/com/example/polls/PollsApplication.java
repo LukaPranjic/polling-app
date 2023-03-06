@@ -1,8 +1,12 @@
 package com.example.polls;
 
+import com.amplibit.codegen.AbstractSpringDAOImpl;
+import com.amplibit.codegen.tables.daos.UsersDao;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
 import jakarta.annotation.PostConstruct;

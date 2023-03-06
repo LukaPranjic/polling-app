@@ -64,6 +64,10 @@ jooq {
                         records = true
                         immutablePojos = true
                         fluentSetters = true
+                        daos = true
+                        relations = true
+                        springDao = true
+                        springAnnotations = true
                     }
                     target {
                         packageName = 'com.amplibit.codegen'
