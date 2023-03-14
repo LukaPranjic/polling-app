@@ -1,8 +1,8 @@
 package com.example.polls.repository;
 
-import com.amplibit.codegen.tables.daos.VotesDao;
-import com.amplibit.codegen.tables.pojos.Votes;
-import com.amplibit.codegen.tables.records.VotesRecord;
+import com.example.polls.codegen.tables.daos.VotesDao;
+import com.example.polls.codegen.tables.pojos.Votes;
+import com.example.polls.codegen.tables.records.VotesRecord;
 import com.example.polls.mapper.ChoiceVoteCountMapper;
 import com.example.polls.mapper.VotesMapper;
 import com.example.polls.model.ChoiceVoteCount;
@@ -28,8 +28,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.amplibit.codegen.tables.Polls.POLLS;
-import static com.amplibit.codegen.tables.Votes.VOTES;
+import static com.example.polls.codegen.tables.Polls.POLLS;
+import static com.example.polls.codegen.tables.Votes.VOTES;
 import static org.jooq.impl.DSL.count;
 import static org.jooq.impl.DSL.user;
 

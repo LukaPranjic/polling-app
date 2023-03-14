@@ -1,12 +1,12 @@
 package com.example.polls.repository;
 
-import com.amplibit.codegen.tables.daos.UsersDao;
-import com.amplibit.codegen.tables.pojos.Users;
-import com.amplibit.codegen.tables.records.UsersRecord;
+import com.example.polls.codegen.tables.daos.UsersDao;
+import com.example.polls.codegen.tables.pojos.Users;
+import com.example.polls.codegen.tables.records.UsersRecord;
 import com.example.polls.mapper.UsersMapper;
 import com.example.polls.model.User;
 import org.jooq.DSLContext;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,19 +14,26 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static com.amplibit.codegen.Tables.USERS;
+import static com.example.polls.codegen.Tables.USERS;
 
 @Service
+@Order(2)
 public class UserRepoService {
 
-    @Autowired
-    private DSLContext dslContext;
 
-    @Autowired
-    private UsersDao usersDao;
+    private final DSLContext dslContext;
 
-    @Autowired
-    private UsersMapper usersMapper;
+
+    private final UsersDao usersDao;
+
+
+    private final UsersMapper usersMapper;
+
+    public UserRepoService(DSLContext dslContext, UsersDao usersDao, UsersMapper usersMapper) {
+        this.dslContext = dslContext;
+        this.usersDao = usersDao;
+        this.usersMapper = usersMapper;
+    }
 
     Optional<User> findByEmail(String email) {
         return Optional.of(usersMapper.toUser(usersDao.fetchOneByEmail(email)));

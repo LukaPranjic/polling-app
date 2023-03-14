@@ -1,11 +1,12 @@
 package com.example.polls.repository;
 
-import com.amplibit.codegen.tables.daos.ChoicesDao;
-import com.amplibit.codegen.tables.daos.PollsDao;
-import com.amplibit.codegen.tables.pojos.Choices;
-import com.amplibit.codegen.tables.pojos.Polls;
-import com.amplibit.codegen.tables.records.ChoicesRecord;
-import com.amplibit.codegen.tables.records.PollsRecord;
+
+import com.example.polls.codegen.tables.daos.ChoicesDao;
+import com.example.polls.codegen.tables.daos.PollsDao;
+import com.example.polls.codegen.tables.pojos.Choices;
+import com.example.polls.codegen.tables.pojos.Polls;
+import com.example.polls.codegen.tables.records.ChoicesRecord;
+import com.example.polls.codegen.tables.records.PollsRecord;
 import com.example.polls.mapper.ChoicesMapper;
 import com.example.polls.mapper.PollsMapper;
 import com.example.polls.model.Choice;
@@ -30,9 +31,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-
-import static com.amplibit.codegen.tables.Polls.POLLS;
-import static com.amplibit.codegen.tables.Choices.CHOICES;
+import static com.example.polls.codegen.Tables.CHOICES;
+import static com.example.polls.codegen.Tables.POLLS;
 
 @Service
 public class PollRepoService {
@@ -185,10 +185,10 @@ public class PollRepoService {
         return record;
     }*/
 
-    private void attachChoices(List<Poll> polls){
+    private void attachChoices(List<Poll> polls) {
         List<Choice> choices;
 
-        for(Poll poll : polls){
+        for (Poll poll : polls) {
             choices = fetchChoices(poll.getId());
             poll.setChoices(choices);
         }

@@ -1,6 +1,6 @@
 package com.example.polls.mapper;
 
-import com.amplibit.codegen.tables.pojos.Votes;
+import com.example.polls.codegen.tables.pojos.Votes;
 import com.example.polls.model.Choice;
 import com.example.polls.model.Poll;
 import com.example.polls.model.Vote;
@@ -12,10 +12,12 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ObjectFactory;
 import org.mapstruct.factory.Mappers;
+import org.springframework.stereotype.Component;
 
 import java.time.ZoneOffset;
 
 @Mapper(componentModel = "spring")
+@Component
 public interface VotesMapper {
 
     VotesMapper INSTANCE = Mappers.getMapper(VotesMapper.class);

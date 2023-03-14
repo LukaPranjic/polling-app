@@ -49,9 +49,9 @@ jooq {
                 logging = Logging.WARN
                 jdbc {
                     driver = 'org.postgresql.Driver'
-                    url = 'jdbc:postgresql://localhost:5432/polling_app'
+                    url = 'jdbc:postgresql://localhost:5433/polling_app'
                     user = 'postgres'
-                    password = 'password'
+                    password = 'postgres'
                 }
                 generator {
                     name = 'org.jooq.codegen.DefaultGenerator'
@@ -70,7 +70,7 @@ jooq {
                         springAnnotations = true
                     }
                     target {
-                        packageName = 'com.amplibit.codegen'
+                        packageName = 'com.example.polls.codegen'
                         directory = 'build/generated-src/jooq/main'  // default (can be omitted)
                     }
                     strategy.name = 'org.jooq.codegen.DefaultGeneratorStrategy'

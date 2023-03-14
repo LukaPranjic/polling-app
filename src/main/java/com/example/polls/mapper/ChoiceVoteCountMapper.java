@@ -5,8 +5,10 @@ import org.jooq.Record2;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
+import org.springframework.stereotype.Component;
 
 @Mapper(componentModel = "spring")
+@Component
 public interface ChoiceVoteCountMapper {
 
     ChoiceVoteCountMapper INSTANCE = Mappers.getMapper(ChoiceVoteCountMapper.class);

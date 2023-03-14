@@ -1,6 +1,6 @@
 package com.example.polls.repository;
 
-import com.amplibit.codegen.tables.daos.RolesDao;
+import com.example.polls.codegen.tables.daos.RolesDao;
 import com.example.polls.mapper.RolesMapper;
 import com.example.polls.model.Role;
 import com.example.polls.model.RoleName;
